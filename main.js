@@ -3,7 +3,7 @@ const advice_id = document.querySelector(".advice-id");
 
 
 async function generateAdvice(){
-    var response = await fetch("https://api.adviceslip.com/advice");
+    var response = await fetch("https://api.adviceslip.com/advice" , {cache: 'no-cache'} );
     var data = await response.json();
     console.log(data.slip.id);
     advice_id.innerHTML = data.slip.id;
